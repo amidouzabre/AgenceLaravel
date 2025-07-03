@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Property;
 use Illuminate\Http\Request;
 
 class PropertyController extends Controller
@@ -12,7 +13,9 @@ class PropertyController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.properties.index', [
+            'properties' => Property::orderBy('created_at', 'desc')->paginate(25),
+        ]);
     }
 
     /**
@@ -31,13 +34,7 @@ class PropertyController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
+   
 
     /**
      * Show the form for editing the specified resource.
