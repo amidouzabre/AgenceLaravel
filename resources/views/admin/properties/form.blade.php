@@ -24,6 +24,9 @@
             @include('shared.input', ['class' => 'col', 'name' => 'city', 'label' => 'Ville', 'value' => $property->city])
             @include('shared.input', ['class' => 'col', 'name' => 'postal_code', 'label' => 'Code postal', 'value' => $property->postal_code])
         </div>
+        <div class="row">
+            @include('shared.checkbox', ['name' => 'sold', 'type' => 'checkbox', 'label' => 'Vendu', 'value' => $property->sold])
+        </div>
         <div>
             <button type="submit" class="btn btn-primary">
                 {{ $property->exists ? 'Modifier' : 'Creer' }}

@@ -30,6 +30,7 @@ class PropertyController extends Controller
             'surface' => 60,
             'bedrooms' => 3,
             'floor' => 0,
+            'rooms' => 4,
             'city' => 'Paris',
             'postal_code' => '75000',
             'sold' => false,
