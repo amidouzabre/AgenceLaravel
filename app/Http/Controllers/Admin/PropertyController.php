@@ -65,9 +65,11 @@ class PropertyController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(PropertyFormRequest $request, Property $property)
     {
-        //
+        $property->update($request->validated());
+
+        return to_route('admin.property.index')->with('success', 'Le Bien a bien modifié');
     }
 
     /**
