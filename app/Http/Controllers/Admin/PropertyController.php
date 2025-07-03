@@ -15,7 +15,7 @@ class PropertyController extends Controller
     public function index()
     {
         return view('admin.properties.index', [
-            'properties' => Property::orderBy('created_at', 'desc')->paginate(1),
+            'properties' => Property::orderBy('created_at', 'desc')->paginate(25),
         ]);
     }
 
@@ -55,9 +55,11 @@ class PropertyController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Property $property)
     {
-        //
+        return view('admin.properties.form', [
+            'property' => $property,
+        ]);
     }
 
     /**

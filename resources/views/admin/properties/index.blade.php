@@ -25,12 +25,14 @@
                     <td>{{ number_format($property->price, thousands_separator: ' ') }} €</td>
                     <td>{{ $property->city }}</td>
                     <td class="text-end">
-                        <a href="{{ route('admin.property.edit', $property) }}" class="btn btn-sm btn-primary">Editer</a>
-                        <form action="{{ route('admin.property.destroy', $property) }}" method="post" class="d-inline">
-                            @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
-                        </form>
+                        <div class="d-flex gap-2 w-100 justify-content-end">
+                            <a href="{{ route('admin.property.edit', $property) }}" class="btn btn-sm btn-primary">Editer</a>
+                            <form action="{{ route('admin.property.destroy', $property) }}" method="post" class="d-inline">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
             @endforeach
