@@ -13,7 +13,17 @@
                 @include('shared.input', ['class' => 'col', 'name' => 'price', 'label' => 'Prix', 'type' => 'number', 'value' => $property->price])
             </div>
         </div>
-        @include('shared.input', ['type' => 'textarea', 'class' => 'col', 'name' => 'description', 'type' => 'textarea', 'value' => $property->description])
+        @include('shared.input', ['type' => 'textarea', 'name' => 'description', 'type' => 'textarea', 'value' => $property->description])
+        <div class="row">
+            @include('shared.input', ['class' => 'col', 'name' => 'rooms','label' => 'Pièces', 'type' => 'number', 'value' => $property->rooms])
+            @include('shared.input', ['class' => 'col', 'name' => 'bedrooms', 'label' => 'Chambres', 'type' => 'number', 'value' => $property->bedrooms])
+            @include('shared.input', ['class' => 'col', 'name' => 'floor', 'label' => 'Etage', 'type' => 'number', 'value' => $property->floor])
+        </div>
+        <div class="row">
+            @include('shared.input', ['class' => 'col', 'name' => 'address', 'label' => 'Adresse', 'value' => $property->address])
+            @include('shared.input', ['class' => 'col', 'name' => 'city', 'label' => 'Ville', 'value' => $property->city])
+            @include('shared.input', ['class' => 'col', 'name' => 'postal_code', 'label' => 'Code postal', 'value' => $property->postal_code])
+        </div>
         <div>
             <button type="submit" class="btn btn-primary">
                 {{ $property->exists ? 'Modifier' : 'Creer' }}
