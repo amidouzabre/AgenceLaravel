@@ -24,9 +24,10 @@
             @include('shared.input', ['class' => 'col', 'name' => 'city', 'label' => 'Ville', 'value' => $property->city])
             @include('shared.input', ['class' => 'col', 'name' => 'postal_code', 'label' => 'Code postal', 'value' => $property->postal_code])
         </div>
-        <div class="row">
-            @include('shared.checkbox', ['name' => 'sold', 'type' => 'checkbox', 'label' => 'Vendu', 'value' => $property->sold])
-        </div>
+        
+        @include('shared.select', ['name' => 'options', 'label' => 'Options', 'value' => $property->options()->pluck('id'), 'multiple' => true, 'options' => $options])
+        @include('shared.checkbox', ['name' => 'sold', 'type' => 'checkbox', 'label' => 'Vendu', 'value' => $property->sold])
+        
         <div>
             <button type="submit" class="btn btn-primary">
                 {{ $property->exists ? 'Modifier' : 'Creer' }}

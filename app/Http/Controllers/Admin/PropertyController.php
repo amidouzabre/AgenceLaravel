@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\PropertyFormRequest;
+use App\Models\Option;
 use App\Models\Property;
 use Illuminate\Http\Request;
 
@@ -37,6 +38,7 @@ class PropertyController extends Controller
         ]);
         return view('admin.properties.form', [
             'property' => $property,
+            'options' => Option::pluck('name', 'id'),
         ]);
     }
 
@@ -59,6 +61,7 @@ class PropertyController extends Controller
     {
         return view('admin.properties.form', [
             'property' => $property,
+            'options' => Option::pluck('name', 'id'),
         ]);
     }
 
