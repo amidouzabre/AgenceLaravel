@@ -9,7 +9,7 @@
     <label for="{{ $name }}">{{ $label }}</label>
     <select class="form-select" name="{{ $name }}[]" id="{{ $name }}" multiple>
         @foreach($options as $k => $v)
-            <option value="{{ $k }}" >{{ $v }}</option>
+            <option value="{{ $k }}" @selected($value->contains($k)) >{{ $v }}</option>
         @endforeach
     </select>
     @error($name)
