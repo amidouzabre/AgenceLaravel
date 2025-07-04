@@ -23,9 +23,9 @@ class OptionController extends Controller
      */
     public function create()
     {
-        $Option = new Option();
+        $option = new Option();
         return view('admin.options.form', [
-            'Option' => $Option,
+            'option' => $option,
         ]);
     }
 
@@ -34,7 +34,7 @@ class OptionController extends Controller
      */
     public function store(OptionFormRequest $request)
     {
-        $Option = Option::create($request->validated());
+        $option = Option::create($request->validated());
 
         return redirect()->route('admin.option.index')->with('success', 'L\'option a bien créé');
     }
@@ -44,19 +44,19 @@ class OptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Option $Option)
+    public function edit(Option $option)
     {
         return view('admin.options.form', [
-            'Option' => $Option,
+            'option' => $option,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(OptionFormRequest $request, Option $Option)
+    public function update(OptionFormRequest $request, Option $option)
     {
-        $Option->update($request->validated());
+        $option->update($request->validated());
 
         return to_route('admin.option.index')->with('success', 'L\'option a bien modifié');
     }
@@ -64,9 +64,9 @@ class OptionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Option $Option)
+    public function destroy(Option $option)
     {
-        $Option->delete();
+        $option->delete();
         return to_route('admin.option.index')->with('success', 'L\'option a bien supprimé');
     }
 }
