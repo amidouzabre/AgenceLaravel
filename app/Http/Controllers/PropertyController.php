@@ -16,7 +16,11 @@ class PropertyController extends Controller
             $query->where('price', '<=', $request->input('price'));
         }
 
-        return view('property.index', ['properties' => $query->paginate(16)]);
+        return view('property.index', 
+        [
+            'properties' => $query->paginate(16),
+            'input' => $request->validated(),
+        ]);
     }
 
     public function show(string $slug, Property $property)
