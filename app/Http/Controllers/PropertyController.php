@@ -14,6 +14,6 @@ class PropertyController extends Controller
 
     public function show(string $slug, Property $property)
     {
-        return view('property.show', ['property' => $property]);
+        //return view('property.show', ['property' => $property]);
     }
 }
