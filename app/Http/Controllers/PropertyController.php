@@ -9,7 +9,8 @@ class PropertyController extends Controller
 {
     public function index()
     {
-        return view('property.index');
+        $properties = Property::paginate(16);
+        return view('property.index', ['properties' => $properties]);
     }
 
     public function show(string $slug, Property $property)
