@@ -23,6 +23,9 @@ class SearchPropertiesRequest extends FormRequest
     {
         return [
             'price' => ['numeric', 'gte:0', 'nullable'],
+            'surface' => ['numeric', 'gte:0', 'nullable'],
+            'rooms' => ['numeric', 'gte:0', 'nullable'],
+            'title' => ['string', 'nullable'],
         ];
     }
 }
