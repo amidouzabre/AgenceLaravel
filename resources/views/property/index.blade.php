@@ -17,11 +17,15 @@
 
     <div class="container">
         <div class="row">
-            @foreach($properties as $property)
+            @forelse($properties as $property)
                 <div class="col-3 mb-4">
                     @include('property.card')
                 </div>
-            @endforeach
+            @empty
+                <div class="col-12">
+                    <p class="text-center">Aucun bien ne correspond à votre recherche</p>
+                </div>
+            @endforelse
         </div>
 
          <div class="my-4">
