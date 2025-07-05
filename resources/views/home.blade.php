@@ -14,7 +14,7 @@
         <div class="row">
             @foreach($properties as $property)
                 <div class="col">
-                        sss
+                    @include('property.card')
                 </div>
             @endforeach
         </div>
