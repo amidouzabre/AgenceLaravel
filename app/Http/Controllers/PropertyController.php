@@ -10,7 +10,7 @@ class PropertyController extends Controller
 {
     public function index(SearchPropertiesRequest $request)
     {
-        $query = Property::query();
+        $query = Property::query()->with('options')->orderBy('order_by', 'desc');
         
         if($price = $request->validated('price')){
             $query->where('price', '<=', $price);
