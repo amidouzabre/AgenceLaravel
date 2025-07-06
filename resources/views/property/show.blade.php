@@ -3,7 +3,7 @@
 @section('title', $property->title)
 
 @section('content')
-<div class="container">
+<div class="container mt-4">
     <h1>{{ $property->title }}</h1>
     <h2>{{ $property->rooms }} pièces - {{ $property->surface }} m²</h2>
     <div class="text-primary fw-bold" style="font-size: 4rem;">
@@ -32,5 +32,44 @@
 
         </form>
     </div>
+
+    <div class="mt-4">
+        <p>{!! nl2br($property->description )  !!}</p>
+        <div class="row">
+            <div class="col-8">
+                <h2>Caractéristique</h2>
+                <table class="table table-striped">
+                    <tr>
+                        <td>Surface habitante</td>
+                        <td>{{$property->surface}} m²</td>
+                    </tr>
+                    <tr>
+                        <td>Pièces</td>
+                        <td>{{$property->rooms}}</td>
+                    </tr>
+                    <tr>
+                        <td>Chambres</td>
+                        <td>{{$property->bedrooms}}</td>
+                    </tr>
+                    <tr>
+                        <td>Etage</td>
+                        <td>{{$property->floor ?: "Rez de chaussé"}}</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-4">
+                <h2>Spécificités</h2>
+                <ul class="list-group">
+                    @foreach($property->options as $option)
+                        <li class="list-group-item">
+                            {{$option->name}}
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 @endsection
