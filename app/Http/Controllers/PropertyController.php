@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PropertyContactRequest;
 use App\Http\Requests\SearchPropertiesRequest;
 use App\Models\Property;
 use Illuminate\Http\Request;
@@ -42,5 +43,10 @@ class PropertyController extends Controller
             return to_route('property.show', ['slug' => $expectedSlug, 'property' => $property] );
         }
         return view('property.show', ['slug' => $slug, 'property' => $property]);
+    }
+
+    public function contact( PropertyContactRequest $request, Property $property)
+    {
+        
     }
 }

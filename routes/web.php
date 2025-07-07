@@ -27,6 +27,9 @@ Route::get('/biens/{slug}-{property}', [PropertyController::class, 'show'])->nam
     'property' => $idRegex
 ]);
 
+Route::post('/biens/{property}/contact', [PropertyController::class, 'contact'])->name('property.contact')->where([
+    'property' => $idRegex
+]);
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->group(function(){
