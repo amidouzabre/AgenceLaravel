@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\PropertyController as AdminPropertyController;
 use App\Http\Controllers\Admin\OptionController as AdminOptionController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PropertyController;
 use Illuminate\Support\Facades\Route;
@@ -30,6 +31,13 @@ Route::get('/biens/{slug}-{property}', [PropertyController::class, 'show'])->nam
 Route::post('/biens/{property}/contact', [PropertyController::class, 'contact'])->name('property.contact')->where([
     'property' => $idRegex
 ]);
+
+
+// Auth
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/login', [AuthController::class, 'doLogin']);
+Route::delete('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 // Admin Routes
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
