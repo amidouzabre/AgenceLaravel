@@ -28,7 +28,8 @@ class PropertyContactMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Property Contact Mail',
+            to: 'admin@agence.com',
+            subject: 'Property Contact Mail'
         );
     }
 
