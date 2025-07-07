@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\Models\Property;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,7 +17,7 @@ class PropertyContactMail extends Mailable
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(public Property $property, public array $data)
     {
         //
     }
