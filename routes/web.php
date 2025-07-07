@@ -32,7 +32,7 @@ Route::post('/biens/{property}/contact', [PropertyController::class, 'contact'])
 ]);
 
 // Admin Routes
-Route::prefix('admin')->name('admin.')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
    Route::resource('property', AdminPropertyController::class)->except(['show']);
    Route::resource('option', AdminOptionController::class)->except(['show']);
 });
