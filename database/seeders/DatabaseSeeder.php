@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Property;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -17,5 +18,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'email' => 'admin@admin.com',
         ]);
+
+        Property::factory(50)->create();
     }
 }
