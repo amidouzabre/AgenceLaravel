@@ -25,6 +25,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
+        
         $property = new Property();
         $property->fill([
             'price' => 100000,
