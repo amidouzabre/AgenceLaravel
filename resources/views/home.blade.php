@@ -1,6 +1,9 @@
 @extends('base')
 
 @section('content')
+
+    <x-alert type='danger' message="Bienvenue sur la page d'accueil"></x-alert>
+
     <div class="bg-light p-5 text-center">
         <div class="container">
             <h1 class="display-4">Bienvenue sur la page d'accueil</h1>
