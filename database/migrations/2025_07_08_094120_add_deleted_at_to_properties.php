@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('properties', function (Blueprint $table) {
-            $table->dateTime('deleted_at')->nullable();
+            //$table->dateTime('deleted_at')->nullable();
+            $table->softDeletes();
         });
     }
 
@@ -22,7 +23,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('properties', function (Blueprint $table) {
-            $table->dropColumn('deleted_at');
+            //$table->dropColumn('deleted_at');
+            $table->dropSoftDeletes();
         });
     }
 };
