@@ -17,7 +17,7 @@
         <form action="{{ route('property.contact', $property) }}" method="post" class="vstack gap-3">
             @csrf
             <div class="row">
-                @include('shared.input', ['class' => 'col', 'name' => 'firstname', 'label' => 'Prénom']) 
+                <x-input class="col" name="firstname" label="Prénom" />
                 @include('shared.input', ['class' => 'col', 'name' => 'lastname', 'label' => 'Nom']) 
             </div>
             <div class="row">
