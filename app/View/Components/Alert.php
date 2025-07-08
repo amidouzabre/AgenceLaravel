@@ -11,7 +11,7 @@ class Alert extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $type = 'success', public string $message = '')
+    public function __construct(public string $type = 'success')
     {
         //
     }
@@ -21,6 +21,8 @@ class Alert extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.alert');
+        return view('components.alert',[
+            'prefix' => 'bonjour',
+        ]);
     }
 }

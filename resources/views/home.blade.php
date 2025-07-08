@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <x-alert type='danger' message="Bienvenue sur la page d'accueil"></x-alert>
+    <x-alert type="success" class="fw-bold">
+        Bienvenue sur la page d'accueil
+    </x-alert>
 
     <div class="bg-light p-5 text-center">
         <div class="container">
@@ -12,6 +14,7 @@
             </p>
         </div>
     </div>
+
     <div class="container">
         <h2>Nos derniers biens</h2>
         <div class="row">
