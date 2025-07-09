@@ -2,6 +2,8 @@
 
 @section('content')
 
+    <x-weather></x-weather>
+
     <x-alert type="success" class="fw-bold">
         Bienvenue sur la page d'accueil
     </x-alert>
