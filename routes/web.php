@@ -38,7 +38,7 @@ Route::get('/dashboard', function () {
 
 
 // Admin Routes
-Route::prefix('admin')->name('admin.')->middleware('auth')->group(function(){
+Route::prefix('admin')->name('admin.')->middleware('auth', 'verified')->group(function(){
    Route::resource('property', AdminPropertyController::class)->except(['show']);
    Route::resource('option', AdminOptionController::class)->except(['show']);
 });
