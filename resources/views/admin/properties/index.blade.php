@@ -27,11 +27,13 @@
                     <td class="text-end">
                         <div class="d-flex gap-2 w-100 justify-content-end">
                             <a href="{{ route('admin.property.edit', $property) }}" class="btn btn-sm btn-primary">Editer</a>
+                            @can('delete', $property)
                             <form action="{{ route('admin.property.destroy', $property) }}" method="post" class="d-inline">
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
                             </form>
+                            @endcan
                         </div>
                     </td>
                 </tr>
